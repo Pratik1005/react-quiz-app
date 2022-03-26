@@ -1,12 +1,5 @@
-import {useEffect} from "react";
-import axios from "axios";
+import "./styles/common.css";
 function App() {
-  useEffect(() => {
-    (async () => {
-      const response = await axios.get("/api/quiz");
-      console.log(response);
-    })();
-  }, []);
   return (
     <div className="App">
       <h1>Hello world!</h1>
