@@ -63,3 +63,17 @@ nav.main-nav ul.right-nav {
 .cta-btn {
   font-size: 1.25rem;
 }
+
+/* featured categories */
+.featured-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  place-items: center;
+}
+
+.featured-categories .category {
+  width: 20rem;
+  box-shadow: 0 2px 20px var(--black-soft);
+  overflow: hidden;
+}
