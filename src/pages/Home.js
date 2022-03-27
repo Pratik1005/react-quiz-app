@@ -26,7 +26,7 @@ const Home = () => {
       <section className="container mg-bottom-lg">
         <div className="hero-ctn">
           <div className="hero-txt">
-            <h1>Test your personal finance knowledge with FinQuiz!</h1>
+            <h1>Test your personal finance knowledge with FinQuiz</h1>
           </div>
           <div className="hero-img">
             <img
