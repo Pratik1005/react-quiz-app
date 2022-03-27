@@ -46,7 +46,7 @@ nav.main-nav ul.right-nav {
 /* hero */
 .hero-ctn {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   margin-top: 3rem;
   padding: 2rem 3rem;
   background-color: var(--clr-white);
