@@ -29,11 +29,7 @@ const Home = () => {
             <h1>Test your personal finance knowledge with FinQuiz</h1>
           </div>
           <div className="hero-img">
-            <img
-              className="img-responsive"
-              src={IMAGES.hero}
-              alt="hero-image"
-            />
+            <img className="img-responsive" src={IMAGES.hero} alt="hero" />
           </div>
         </div>
       </section>
