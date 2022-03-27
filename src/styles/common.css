@@ -1,7 +1,13 @@
 @import "https://litespeedui.netlify.app/components/components.css";
-@import url("https://fonts.googleapis.com/css2?family=Inter&family=Parisienne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Parisienne&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--clr-txt-dark);
+  background-color: #f7f7f7;
+}
 
 ul {
   list-style: none;

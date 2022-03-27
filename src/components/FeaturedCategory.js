@@ -1,13 +1,11 @@
+import {Link} from "react-router-dom";
+
 const FeaturedCategory = ({imgSrc, categoryName}) => {
   return (
-    <>
-      <img
-        src="https://assetpoint.netlify.app/images/general.jpg"
-        alt="category"
-        className="img-responsive"
-      />
-      <h3 className="text-center pd-sm">Stock Investing</h3>
-    </>
+    <Link to="/">
+      <img src={imgSrc} alt={categoryName} className="img-responsive" />
+      <h3 className="text-center pd-sm category-title">{categoryName}</h3>
+    </Link>
   );
 };
 
