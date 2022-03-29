@@ -23,7 +23,7 @@ const Quiz = () => {
         console.error("Single quiz", err);
       }
     })();
-  }, []);
+  }, [params.quizId]);
   return (
     <>
       <NavMenu />
