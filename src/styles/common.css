@@ -17,6 +17,10 @@ ul {
   margin-bottom: 2rem;
 }
 
+.app-ctn {
+  min-height: calc(100vh - 10rem);
+}
+
 /* main nav menu */
 header {
   background-color: var(--clr-white);
