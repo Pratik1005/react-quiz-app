@@ -4,6 +4,7 @@ import {NavMenu, Footer} from "../components";
 import {useState, useEffect} from "react";
 import axios from "axios";
 import {FeaturedCategory} from "../components/FeaturedCategory";
+import {Link} from "react-router-dom";
 
 const Home = () => {
   const [featuredCategory, setFeaturedCategory] = useState([]);
@@ -14,7 +15,7 @@ const Home = () => {
       try {
         const response = await axios.get("/api/quiz");
         setLoader(false);
-        setFeaturedCategory(response.data.quiz.featuredCategories);
+        setFeaturedCategory(response.data.quiz);
       } catch (err) {
         console.error("Featured Category", err);
       }
@@ -39,12 +40,12 @@ const Home = () => {
           {loader && <h3 className="text-center">Loading...</h3>}
           <div className="categories-ctn">
             {featuredCategory.map((item) => (
-              <div key={item.id} className="category br-sm">
+              <Link to={`/rules/${item.id}`} key={item.id}>
                 <FeaturedCategory
-                  imgSrc={item.imgSrc}
-                  categoryName={item.title}
+                  imgSrc={item.categoryImg}
+                  categoryName={item.categoryName}
                 />
-              </div>
+              </Link>
             ))}
           </div>
         </div>
