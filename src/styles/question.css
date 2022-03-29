@@ -20,3 +20,8 @@ p.question-title {
   width: 100%;
   cursor: pointer;
 }
+
+.option:hover {
+  background-color: var(--input-success);
+  transition: var(--transition);
+}

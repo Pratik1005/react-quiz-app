@@ -20,26 +20,31 @@ createServer(
                     {
                       id: uuid(),
                       question: "What is the full form LTCG?",
-                      option1: "Long term Capital Gain",
-                      option2: "Legal Term Capital Gain",
-                      option3: "Long Term Capital Gross",
-                      answer: "Long term Capital Gain",
+                      options: [
+                        {
+                          option: "Long term Capital Gain",
+                          isCorrect: true,
+                        },
+                        {option: "Legal Term Capital Gain", isCorrect: false},
+                        {option: "Long Term Capital Gross", isCorrect: false},
+                      ],
                     },
                     {
                       id: uuid(),
                       question: "DeMat account is used to store?",
-                      option1: "Money",
-                      option2: "Shares",
-                      option3: "Digital Gold",
-                      answer: "Shares",
+                      options: [
+                        {option: "Money", isCorrect: false},
+                        {option: "Shares", isCorrect: true},
+                        {option: "Digital Gold", isCorrect: false},
+                      ],
                     },
                     {
                       id: uuid(),
                       question: "BSE was established before NSE?",
-                      option1: "True",
-                      option2: "False",
-                      option3: "",
-                      answer: "True",
+                      options: [
+                        {option: "True", isCorrect: true},
+                        {option: "False", isCorrect: false},
+                      ],
                     },
                   ],
                 },
