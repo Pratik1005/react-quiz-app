@@ -52,7 +52,7 @@ createServer(
               allQuiz: [
                 {
                   id: uuid(),
-                  quizTitle: "Basics of Stock Market",
+                  quizTitle: "Basics of Real Estate",
                   quizData: [
                     {
                       id: uuid(),
@@ -83,7 +83,7 @@ createServer(
               allQuiz: [
                 {
                   id: uuid(),
-                  quizTitle: "Basics of Stock Market",
+                  quizTitle: "Basics of Finance",
                   quizData: [
                     {
                       id: uuid(),
