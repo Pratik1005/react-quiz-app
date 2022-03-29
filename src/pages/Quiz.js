@@ -1,24 +1,24 @@
-import {NavMenu, Footer, Rules} from "../components";
+import {NavMenu, Footer, Question} from "../components";
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import axios from "axios";
 
 const Quiz = () => {
   const params = useParams();
-  console.log(params);
-  const [quiz, setQuiz] = useState([]);
+  const [quiz, setQuiz] = useState([{}]);
+  const [quizTitle, setQuizTitle] = useState("");
+
   useEffect(() => {
     (async () => {
       try {
         const response = await axios.get(`/api/quiz`);
-        const allQuiz = response.data.quiz;
-        console.log("allquiz", allQuiz);
-        const selectedQuiz = allQuiz.filter(
+        const quizDb = response.data.quiz;
+        const selectedQuiz = quizDb.filter(
           (item) => item.id === parseInt(params.quizId)
         );
-        console.log("filter", selectedQuiz);
-        // setQuiz([...selectedQuiz]);
-        // console.log(quiz);
+        const currentQuiz = selectedQuiz[0].allQuiz[0];
+        setQuizTitle(currentQuiz.quizTitle);
+        setQuiz(currentQuiz.quizData);
       } catch (err) {
         console.error("Single quiz", err);
       }
@@ -27,7 +27,10 @@ const Quiz = () => {
   return (
     <>
       <NavMenu />
-      <h1>Quiz</h1>
+      <section className="app-ctn">
+        <h2 className="text-center pd-lg">{quizTitle}</h2>
+        <Question data={quiz} />
+      </section>
       <Footer />
     </>
   );

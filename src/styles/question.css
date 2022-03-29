@@ -1,0 +1,22 @@
+.question-ctn {
+  width: 100%;
+  max-width: 500px;
+  margin: 1rem auto;
+}
+
+p.question-title {
+  font-size: 1.5rem;
+}
+
+.option-ctn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.option {
+  background-color: var(--light-gray);
+  width: 100%;
+  cursor: pointer;
+}
