@@ -1,5 +1,5 @@
 import {Routes, Route} from "react-router-dom";
-import {Home, Quiz, Rules} from "../pages";
+import {Home, Quiz, Rules, Result} from "../pages";
 
 const MenuRoutes = () => {
   return (
@@ -7,6 +7,7 @@ const MenuRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/rules/:quizId" element={<Rules />} />
       <Route path="/quiz/:quizId" element={<Quiz />} />
+      <Route path="/result" element={<Result />} />
     </Routes>
   );
 };

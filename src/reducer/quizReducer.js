@@ -3,7 +3,7 @@ const quizReducer = (state, action) => {
     case "INCREASE_SCORE":
       return {
         ...state,
-        totalScore: action.payload,
+        totalScore: state.totalScore + 1,
       };
     default:
       return state;

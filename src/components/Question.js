@@ -1,11 +1,21 @@
 import "../styles/question.css";
-import {useState} from "react";
+import {useNavigate} from "react-router-dom";
+import {useQuiz} from "../context/quiz-context";
 
 const Question = ({data, goToNext, totalCount, currentCount}) => {
-  console.log(data.options);
-  const [count, setCount] = useState(0);
-  const handleQuestionCount = () => {
+  const {quizState, quizDispatch} = useQuiz();
+  const navigate = useNavigate();
+  const handleQuestionCount = (item) => {
     goToNext();
+    console.log(currentCount);
+    if (item.isCorrect) {
+      quizDispatch({type: "INCREASE_SCORE"});
+      console.log(quizState.totalScore);
+    }
+    if (currentCount === totalCount - 1) {
+      console.log("last");
+      navigate("/result");
+    }
   };
   return (
     <div className="question-ctn">
@@ -17,7 +27,7 @@ const Question = ({data, goToNext, totalCount, currentCount}) => {
         {data.options.map((item) => (
           <p
             className="option pd-sm br-md text-center fw-bold"
-            onClick={handleQuestionCount}
+            onClick={() => handleQuestionCount(item)}
             key={item.option}
           >
             {item.option}

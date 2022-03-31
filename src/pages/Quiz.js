@@ -20,7 +20,6 @@ const Quiz = () => {
         const currentQuiz = selectedQuiz[0].allQuiz[0];
         setQuizTitle(currentQuiz.quizTitle);
         setQuiz(currentQuiz.quizData);
-        console.log(currentQuiz.quizData);
       } catch (err) {
         console.error("Single quiz", err);
       }
@@ -28,8 +27,6 @@ const Quiz = () => {
   }, [params.quizId]);
   const totalQuestionCount = quiz.length;
   const goToNext = () => {
-    console.log(currentQuestion);
-    console.log(quiz.length);
     currentQuestion < quiz.length - 1 && setCurrentQuestion((n) => n + 1);
   };
   return (
