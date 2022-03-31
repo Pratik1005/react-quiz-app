@@ -22,7 +22,7 @@ createServer(
                       question: "What is the full form LTCG?",
                       options: [
                         {
-                          option: "Long term Capital Gain",
+                          option: "Long Term Capital Gain",
                           isCorrect: true,
                         },
                         {option: "Legal Term Capital Gain", isCorrect: false},
@@ -44,6 +44,25 @@ createServer(
                       options: [
                         {option: "True", isCorrect: true},
                         {option: "False", isCorrect: false},
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "Return on investment in shares is called?",
+                      options: [
+                        {option: "Capital", isCorrect: false},
+                        {option: "Dividend", isCorrect: true},
+                        {option: "Remainder", isCorrect: false},
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question:
+                        "Free shares issued by the company to the investors is called?",
+                      options: [
+                        {option: "Bonds", isCorrect: false},
+                        {option: "Derivatives", isCorrect: false},
+                        {option: "Bonus", isCorrect: true},
                       ],
                     },
                   ],

@@ -5,7 +5,7 @@ const QuizContext = createContext(null);
 
 const quizInitialState = {
   totalScore: 0,
-  userSelectedAnswers: [],
+  userSelectedOptions: [],
   quizData: [],
 };
 

@@ -21,7 +21,32 @@ p.question-title {
   cursor: pointer;
 }
 
+.option.result-options {
+  cursor: default;
+}
+
 .option:hover {
   background-color: var(--input-success);
   transition: var(--transition);
+}
+
+.option.result-options:hover {
+  background-color: var(--light-gray);
+  transition: none;
+}
+
+.option.correct-option {
+  background-color: var(--input-success);
+}
+
+.option.correct-option:hover {
+  background-color: var(--input-success);
+}
+
+.option.incorrect-option {
+  background-color: var(--input-error);
+}
+
+.option.incorrect-option:hover {
+  background-color: var(--input-error);
 }

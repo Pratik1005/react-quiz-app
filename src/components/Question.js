@@ -7,7 +7,7 @@ const Question = ({data, goToNext, totalCount, currentCount}) => {
   const navigate = useNavigate();
   const handleQuestionCount = (item) => {
     goToNext();
-    console.log(currentCount);
+    quizDispatch({type: "USER_SELECTED_OPTION", payload: item.option});
     if (item.isCorrect) {
       quizDispatch({type: "INCREASE_SCORE"});
       console.log(quizState.totalScore);

@@ -1,13 +1,15 @@
-import {NavMenu, Footer, Question} from "../components";
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import axios from "axios";
+import {NavMenu, Footer, Question} from "../components";
+import {useQuiz} from "../context/quiz-context";
 
 const Quiz = () => {
   const params = useParams();
   const [quiz, setQuiz] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [quizTitle, setQuizTitle] = useState("");
+  const {quizDispatch} = useQuiz();
 
   useEffect(() => {
     (async () => {
@@ -20,6 +22,8 @@ const Quiz = () => {
         const currentQuiz = selectedQuiz[0].allQuiz[0];
         setQuizTitle(currentQuiz.quizTitle);
         setQuiz(currentQuiz.quizData);
+        quizDispatch({type: "RESET"});
+        quizDispatch({type: "QUIZ_DATA", payload: currentQuiz.quizData});
       } catch (err) {
         console.error("Single quiz", err);
       }
