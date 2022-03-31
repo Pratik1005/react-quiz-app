@@ -19,7 +19,7 @@ const Result = () => {
       <NavMenu />
       <section>
         <h2 className="text-center pd-lg">Result</h2>
-        <p className="question-title text-center">
+        <p className="question-title text-center fw-bold">
           You Scored: {quizState.totalScore}/100
         </p>
         <div className="question-ctn">

@@ -40,7 +40,7 @@ const Home = () => {
           {loader && <h3 className="text-center">Loading...</h3>}
           <div className="categories-ctn">
             {featuredCategory.map((item) => (
-              <Link to={`/rules/${item.id}`} key={item.id}>
+              <Link to={`/category/${item.id}`} key={item.id}>
                 <FeaturedCategory
                   imgSrc={item.categoryImg}
                   categoryName={item.categoryName}
