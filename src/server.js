@@ -11,7 +11,7 @@ createServer(
             {
               id: 1,
               categoryName: "Stock Investment",
-              categoryImg: "https://assetpoint.netlify.app/images/general.jpg",
+              categoryImg: "https://assetpoint.netlify.app/images/stock.jpg",
               allQuiz: [
                 {
                   id: uuid(),
@@ -20,26 +20,110 @@ createServer(
                     {
                       id: uuid(),
                       question: "What is the full form LTCG?",
-                      option1: "Long term Capital Gain",
-                      option2: "Legal Term Capital Gain",
-                      option3: "Long Term Capital Gross",
-                      answer: "Long term Capital Gain",
+                      options: [
+                        {
+                          option: "Long Term Capital Gain",
+                          isCorrect: true,
+                        },
+                        {option: "Legal Term Capital Gain", isCorrect: false},
+                        {option: "Long Term Capital Gross", isCorrect: false},
+                      ],
                     },
                     {
                       id: uuid(),
                       question: "DeMat account is used to store?",
-                      option1: "Money",
-                      option2: "Shares",
-                      option3: "Digital Gold",
-                      answer: "Shares",
+                      options: [
+                        {option: "Money", isCorrect: false},
+                        {option: "Shares", isCorrect: true},
+                        {option: "Digital Gold", isCorrect: false},
+                      ],
                     },
                     {
                       id: uuid(),
                       question: "BSE was established before NSE?",
-                      option1: "True",
-                      option2: "False",
-                      option3: "",
-                      answer: "True",
+                      options: [
+                        {option: "True", isCorrect: true},
+                        {option: "False", isCorrect: false},
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "Return on investment in shares is called?",
+                      options: [
+                        {option: "Capital", isCorrect: false},
+                        {option: "Dividend", isCorrect: true},
+                        {option: "Remainder", isCorrect: false},
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question:
+                        "Free shares issued by the company to the investors is called?",
+                      options: [
+                        {option: "Bonds", isCorrect: false},
+                        {option: "Derivatives", isCorrect: false},
+                        {option: "Bonus", isCorrect: true},
+                      ],
+                    },
+                  ],
+                },
+                {
+                  id: uuid(),
+                  quizTitle: "Advance Stock Market",
+                  quizData: [
+                    {
+                      id: uuid(),
+                      question: "What is Face Value?",
+                      options: [
+                        {
+                          option: "Original Price of the share",
+                          isCorrect: true,
+                        },
+                        {
+                          option: "Current Price of the share",
+                          isCorrect: false,
+                        },
+                        {option: "Future Price of the share", isCorrect: false},
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "What Top Line means in Financial Analysis?",
+                      options: [
+                        {option: "Profit", isCorrect: false},
+                        {option: "Turnover", isCorrect: true},
+                        {option: "Loss", isCorrect: false},
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "What Bottom Line means in Financial Analysis?",
+                      options: [
+                        {option: "Loss", isCorrect: false},
+                        {option: "Profit after tax", isCorrect: true},
+                        {option: "Loss after tax", isCorrect: false},
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "What is Stock Split?",
+                      options: [
+                        {
+                          option: "Spliting current share price",
+                          isCorrect: false,
+                        },
+                        {option: "Spliting company profit", isCorrect: false},
+                        {option: "Spliting face value", isCorrect: true},
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "Dividend is tax free upto?",
+                      options: [
+                        {option: "1 Lac", isCorrect: false},
+                        {option: "5 Lac", isCorrect: false},
+                        {option: "10 Lac", isCorrect: true},
+                      ],
                     },
                   ],
                 },
@@ -48,33 +132,9 @@ createServer(
             {
               id: 2,
               categoryName: "Real Estate",
-              categoryImg: "https://assetpoint.netlify.app/images/general.jpg",
-              allQuiz: [
-                {
-                  id: uuid(),
-                  quizTitle: "Basics of Real Estate",
-                  quizData: [
-                    {
-                      id: uuid(),
-                      question: "Question1",
-                      option1: "a",
-                      option2: "b",
-                      option3: "c",
-                      option4: "d",
-                      answer: "a",
-                    },
-                    {
-                      id: uuid(),
-                      question: "Question2",
-                      option1: "a",
-                      option2: "b",
-                      option3: "c",
-                      option4: "d",
-                      answer: "b",
-                    },
-                  ],
-                },
-              ],
+              categoryImg:
+                "https://assetpoint.netlify.app/images/real-estate.jpg",
+              allQuiz: [],
             },
             {
               id: 3,
@@ -87,21 +147,61 @@ createServer(
                   quizData: [
                     {
                       id: uuid(),
-                      question: "Question1",
-                      option1: "a",
-                      option2: "b",
-                      option3: "c",
-                      option4: "d",
-                      answer: "a",
+                      question: "What is Asset?",
+                      options: [
+                        {option: "debt you owe", isCorrect: false},
+                        {
+                          option: "that can be converted into cash",
+                          isCorrect: true,
+                        },
+                        {option: "fees you need to pay", isCorrect: false},
+                      ],
                     },
                     {
                       id: uuid(),
-                      question: "Question2",
-                      option1: "a",
-                      option2: "b",
-                      option3: "c",
-                      option4: "d",
-                      answer: "b",
+                      question:
+                        "Which is correct Fundamental accounting equation?",
+                      options: [
+                        {option: "Asset = Liability + Equity", isCorrect: true},
+                        {
+                          option: "Equity = Asset + Liability",
+                          isCorrect: false,
+                        },
+                        {
+                          option: "Liability = Asset + Equity",
+                          isCorrect: false,
+                        },
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "What is Balance Sheet?",
+                      options: [
+                        {option: "Employee details", isCorrect: false},
+                        {option: "Debt of company", isCorrect: false},
+                        {
+                          option: "Financial statement of company",
+                          isCorrect: true,
+                        },
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "What is Net worth?",
+                      options: [
+                        {option: "Asset - Liability", isCorrect: true},
+                        {option: "Asset + Liability", isCorrect: false},
+                        {option: "NOTA", isCorrect: false},
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "Which of the following have high Liquidity?",
+                      options: [
+                        {option: "Real Estate", isCorrect: false},
+                        {option: "Stock/Bond", isCorrect: true},
+                        {option: "Vehicle", isCorrect: false},
+                      ],
                     },
                   ],
                 },

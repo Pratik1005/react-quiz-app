@@ -3,10 +3,14 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import "./server";
 import {BrowserRouter as Router} from "react-router-dom";
+import {QuizProvider} from "./context/quiz-context";
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <QuizProvider>
+        <App />
+      </QuizProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

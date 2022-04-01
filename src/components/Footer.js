@@ -13,7 +13,7 @@ const Footer = () => {
           <i className="fab fa-twitter"></i>
         </a>
       </div>
-      <p className="copyright">© 2022 AssetPoint</p>
+      <p className="copyright">© {new Date().getFullYear()} FinQuiz</p>
     </footer>
   );
 };
