@@ -1,6 +1,6 @@
 .quiz-card-ctn {
-    display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1rem;
   place-items: center;
 }
@@ -10,4 +10,12 @@
     box-shadow: 0 2px 20px var(--black-soft);
     overflow: hidden;
     background-color: var(--clr-white);
+}
+.quiz-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz-card-content p {
+    color: var(--clr-txt-dark);
 }

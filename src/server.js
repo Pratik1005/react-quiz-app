@@ -11,7 +11,7 @@ createServer(
             {
               id: 1,
               categoryName: "Stock Investment",
-              categoryImg: "https://assetpoint.netlify.app/images/general.jpg",
+              categoryImg: "https://assetpoint.netlify.app/images/stock.jpg",
               allQuiz: [
                 {
                   id: uuid(),
@@ -72,7 +72,8 @@ createServer(
             {
               id: 2,
               categoryName: "Real Estate",
-              categoryImg: "https://assetpoint.netlify.app/images/general.jpg",
+              categoryImg:
+                "https://assetpoint.netlify.app/images/real-estate.jpg",
               allQuiz: [
                 {
                   id: uuid(),
