@@ -134,32 +134,7 @@ createServer(
               categoryName: "Real Estate",
               categoryImg:
                 "https://assetpoint.netlify.app/images/real-estate.jpg",
-              allQuiz: [
-                {
-                  id: uuid(),
-                  quizTitle: "Basics of Real Estate",
-                  quizData: [
-                    {
-                      id: uuid(),
-                      question: "Question1",
-                      option1: "a",
-                      option2: "b",
-                      option3: "c",
-                      option4: "d",
-                      answer: "a",
-                    },
-                    {
-                      id: uuid(),
-                      question: "Question2",
-                      option1: "a",
-                      option2: "b",
-                      option3: "c",
-                      option4: "d",
-                      answer: "b",
-                    },
-                  ],
-                },
-              ],
+              allQuiz: [],
             },
             {
               id: 3,
@@ -172,21 +147,61 @@ createServer(
                   quizData: [
                     {
                       id: uuid(),
-                      question: "Question1",
-                      option1: "a",
-                      option2: "b",
-                      option3: "c",
-                      option4: "d",
-                      answer: "a",
+                      question: "What is Asset?",
+                      options: [
+                        {option: "debt you owe", isCorrect: false},
+                        {
+                          option: "that can be converted into cash",
+                          isCorrect: true,
+                        },
+                        {option: "fees you need to pay", isCorrect: false},
+                      ],
                     },
                     {
                       id: uuid(),
-                      question: "Question2",
-                      option1: "a",
-                      option2: "b",
-                      option3: "c",
-                      option4: "d",
-                      answer: "b",
+                      question:
+                        "Which is correct Fundamental accounting equation?",
+                      options: [
+                        {option: "Asset = Liability + Equity", isCorrect: true},
+                        {
+                          option: "Equity = Asset + Liability",
+                          isCorrect: false,
+                        },
+                        {
+                          option: "Liability = Asset + Equity",
+                          isCorrect: false,
+                        },
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "What is Balance Sheet?",
+                      options: [
+                        {option: "Employee details", isCorrect: false},
+                        {option: "Debt of company", isCorrect: false},
+                        {
+                          option: "Financial statement of company",
+                          isCorrect: true,
+                        },
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "What is Net worth?",
+                      options: [
+                        {option: "Asset - Liability", isCorrect: true},
+                        {option: "Asset + Liability", isCorrect: false},
+                        {option: "NOTA", isCorrect: false},
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "Which of the following have high Liquidity?",
+                      options: [
+                        {option: "Real Estate", isCorrect: false},
+                        {option: "Stock/Bond", isCorrect: true},
+                        {option: "Vehicle", isCorrect: false},
+                      ],
                     },
                   ],
                 },

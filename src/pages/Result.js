@@ -4,12 +4,10 @@ import {useQuiz} from "../context/quiz-context";
 
 const Result = () => {
   const {quizState} = useQuiz();
-  console.log(quizState.userSelectedOptions);
   const isUserCorrect = (index, choice) => {
     const selectedOption = quizState.userSelectedOptions[index];
     if (selectedOption === choice.option) {
       if (!choice.isCorrect) {
-        console.log("incorrect", choice.option);
         return "incorrect-option";
       }
     }

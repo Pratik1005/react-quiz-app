@@ -10,10 +10,8 @@ const Question = ({data, goToNext, totalCount, currentCount}) => {
     quizDispatch({type: "USER_SELECTED_OPTION", payload: item.option});
     if (item.isCorrect) {
       quizDispatch({type: "INCREASE_SCORE"});
-      console.log(quizState.totalScore);
     }
     if (currentCount === totalCount - 1) {
-      console.log("last");
       navigate("/result");
     }
   };

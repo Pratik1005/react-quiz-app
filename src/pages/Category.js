@@ -36,19 +36,23 @@ const Category = () => {
       <section className="app-ctn">
         {loader && <h2 className="text-center">Loading...</h2>}
         <h2 className="text-center pd-lg">Quizzes on {categoryData.title}</h2>
-        <div className="quiz-card-ctn">
-          {quizList.map((item) => (
-            <Link
-              to={`/rules/${categoryData.id}/${item.quizTitle}`}
-              key={item.id}
-            >
-              <QuizCard
-                imgSrc={categoryData.cardImg}
-                quizTitle={item.quizTitle}
-              />
-            </Link>
-          ))}
-        </div>
+        {quizList.length > 0 ? (
+          <div className="quiz-card-ctn">
+            {quizList.map((item) => (
+              <Link
+                to={`/rules/${categoryData.id}/${item.quizTitle}`}
+                key={item.id}
+              >
+                <QuizCard
+                  imgSrc={categoryData.cardImg}
+                  quizTitle={item.quizTitle}
+                />
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <h3 className="text-center">Coming Soon...</h3>
+        )}
       </section>
       <Footer />
     </>
