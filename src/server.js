@@ -67,6 +67,66 @@ createServer(
                     },
                   ],
                 },
+                {
+                  id: uuid(),
+                  quizTitle: "Advance Stock Market",
+                  quizData: [
+                    {
+                      id: uuid(),
+                      question: "What is Face Value?",
+                      options: [
+                        {
+                          option: "Original Price of the share",
+                          isCorrect: true,
+                        },
+                        {
+                          option: "Current Price of the share",
+                          isCorrect: false,
+                        },
+                        {option: "Future Price of the share", isCorrect: false},
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "What Top Line means in Financial Analysis?",
+                      options: [
+                        {option: "Profit", isCorrect: false},
+                        {option: "Turnover", isCorrect: true},
+                        {option: "Loss", isCorrect: false},
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "What Bottom Line means in Financial Analysis?",
+                      options: [
+                        {option: "Loss", isCorrect: false},
+                        {option: "Profit after tax", isCorrect: true},
+                        {option: "Loss after tax", isCorrect: false},
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "What is Stock Split?",
+                      options: [
+                        {
+                          option: "Spliting current share price",
+                          isCorrect: false,
+                        },
+                        {option: "Spliting company profit", isCorrect: false},
+                        {option: "Spliting face value", isCorrect: true},
+                      ],
+                    },
+                    {
+                      id: uuid(),
+                      question: "Dividend is tax free upto?",
+                      options: [
+                        {option: "1 Lac", isCorrect: false},
+                        {option: "5 Lac", isCorrect: false},
+                        {option: "10 Lac", isCorrect: true},
+                      ],
+                    },
+                  ],
+                },
               ],
             },
             {

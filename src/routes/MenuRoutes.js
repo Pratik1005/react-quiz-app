@@ -6,8 +6,8 @@ const MenuRoutes = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/category/:quizId" element={<Category />} />
-      <Route path="/rules/:quizId" element={<Rules />} />
-      <Route path="/quiz/:quizId" element={<Quiz />} />
+      <Route path="/rules/:quizId/:quizTitle" element={<Rules />} />
+      <Route path="/quiz/:quizId/:quizTitle" element={<Quiz />} />
       <Route path="/result" element={<Result />} />
     </Routes>
   );

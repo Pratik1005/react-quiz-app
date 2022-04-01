@@ -19,7 +19,10 @@ const Quiz = () => {
         const selectedQuiz = quizDb.filter(
           (item) => item.id === parseInt(params.quizId)
         );
-        const currentQuiz = selectedQuiz[0].allQuiz[0];
+        const quizQuestions = selectedQuiz[0].allQuiz.find(
+          (item) => item.quizTitle === params.quizTitle
+        );
+        const currentQuiz = quizQuestions;
         setQuizTitle(currentQuiz.quizTitle);
         setQuiz(currentQuiz.quizData);
         quizDispatch({type: "RESET"});

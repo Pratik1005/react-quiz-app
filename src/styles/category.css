@@ -1,8 +1,7 @@
 .quiz-card-ctn {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1rem;
-  place-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
 }
 
 .quiz-card-ctn .quiz-card {

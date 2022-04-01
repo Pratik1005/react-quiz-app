@@ -3,8 +3,8 @@ import {NavMenu, Footer} from "../components";
 import {Link, useParams} from "react-router-dom";
 
 const Rules = () => {
-  const params = useParams();
-  const quizId = params.quizId;
+  const {quizId, quizTitle} = useParams();
+  // const quizId = params.quizId;
   return (
     <>
       <NavMenu />
@@ -15,11 +15,11 @@ const Rules = () => {
             <ul>
               <li>
                 <span class="material-icons">chevron_right</span>
-                Each question consist of 10 points
+                Each question consist of 20 points
               </li>
               <li>
                 <span class="material-icons">chevron_right</span>
-                To pass the test you need to score atleast 70%
+                To pass the test you need to score atleast 60%
               </li>
               <li>
                 <span class="material-icons">chevron_right</span>
@@ -27,7 +27,7 @@ const Rules = () => {
               </li>
             </ul>
           </div>
-          <Link to={`/quiz/${quizId}`} className="btn btn-primary">
+          <Link to={`/quiz/${quizId}/${quizTitle}`} className="btn btn-primary">
             Start Quiz
           </Link>
         </div>
