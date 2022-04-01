@@ -29,7 +29,7 @@ const Category = () => {
         console.error("Category quiz", err);
       }
     })();
-  }, []);
+  }, [quizId]);
   return (
     <>
       <NavMenu />

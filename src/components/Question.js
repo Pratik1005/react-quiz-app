@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {useQuiz} from "../context/quiz-context";
 
 const Question = ({data, goToNext, totalCount, currentCount}) => {
-  const {quizState, quizDispatch} = useQuiz();
+  const {quizDispatch} = useQuiz();
   const navigate = useNavigate();
   const handleQuestionCount = (item) => {
     goToNext();
