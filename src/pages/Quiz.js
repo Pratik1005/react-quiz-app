@@ -31,7 +31,7 @@ const Quiz = () => {
         console.error("Single quiz", err);
       }
     })();
-  }, [params.quizId]);
+  }, [params.quizId, params.quizTitle]);
   const totalQuestionCount = quiz.length;
   const goToNext = () => {
     currentQuestion < quiz.length - 1 && setCurrentQuestion((n) => n + 1);
