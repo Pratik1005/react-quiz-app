@@ -1,15 +1,19 @@
 import "../styles/question.css";
 import {useNavigate} from "react-router-dom";
 import {useQuiz} from "../context/quiz-context";
+import {QUIZ_ACTIONS} from "../utils/constant";
 
 const Question = ({data, goToNext, totalCount, currentCount}) => {
   const {quizDispatch} = useQuiz();
   const navigate = useNavigate();
   const handleQuestionCount = (item) => {
     goToNext();
-    quizDispatch({type: "USER_SELECTED_OPTION", payload: item.option});
+    quizDispatch({
+      type: QUIZ_ACTIONS.SET_USER_SELECTED_OPTION,
+      payload: item.option,
+    });
     if (item.isCorrect) {
-      quizDispatch({type: "INCREASE_SCORE"});
+      quizDispatch({type: QUIZ_ACTIONS.INCREASE_SCORE});
     }
     if (currentCount === totalCount - 1) {
       navigate("/result");

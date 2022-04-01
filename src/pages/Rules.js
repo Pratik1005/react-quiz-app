@@ -4,7 +4,7 @@ import {Link, useParams} from "react-router-dom";
 
 const Rules = () => {
   const {quizId, quizTitle} = useParams();
-  // const quizId = params.quizId;
+
   return (
     <>
       <NavMenu />

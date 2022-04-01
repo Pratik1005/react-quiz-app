@@ -3,6 +3,7 @@ import {useState, useEffect} from "react";
 import axios from "axios";
 import {NavMenu, Footer, Question} from "../components";
 import {useQuiz} from "../context/quiz-context";
+import {QUIZ_ACTIONS} from "../utils/constant";
 
 const Quiz = () => {
   const params = useParams();
@@ -25,8 +26,11 @@ const Quiz = () => {
         const currentQuiz = quizQuestions;
         setQuizTitle(currentQuiz.quizTitle);
         setQuiz(currentQuiz.quizData);
-        quizDispatch({type: "RESET"});
-        quizDispatch({type: "QUIZ_DATA", payload: currentQuiz.quizData});
+        quizDispatch({type: QUIZ_ACTIONS.RESET_QUIZ_STATE});
+        quizDispatch({
+          type: QUIZ_ACTIONS.INITIALIZE_QUIZ_DATA,
+          payload: currentQuiz.quizData,
+        });
       } catch (err) {
         console.error("Single quiz", err);
       }
