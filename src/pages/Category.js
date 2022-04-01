@@ -5,7 +5,7 @@ import {NavMenu, Footer} from "../components";
 
 const Category = () => {
   const [quizList, setQuizList] = useState([]);
-  const [categoryTitle, setCategoryTitle] = useState("");
+  const [categoryData, setCategoryData] = useState({});
   const {quizId} = useParams();
   console.log(typeof quizId);
   useEffect(() => {
@@ -17,7 +17,10 @@ const Category = () => {
         const selectedCategory = quizDb.find(
           (item) => item.id === parseInt(quizId)
         );
-        setCategoryTitle(selectedCategory.categoryName);
+        setCategoryData({
+          title: selectedCategory.categoryName,
+          cardImg: selectedCategory.categoryImg,
+        });
         setQuizList(selectedCategory.allQuiz);
         console.log(quizList);
       } catch (err) {
@@ -29,15 +32,16 @@ const Category = () => {
     <>
       <NavMenu />
       <section>
-        <h2 className="text-center">{categoryTitle}</h2>
-        <div className="quiz-card">
-          <img src="" alt="" />
-          <div className="quiz-card-content">
-            <h3>{categoryTitle}</h3>
-            <Link to={`/rules/${quizId}`} className="btn btn-primary">
-              Play Quiz
+        <h2 className="text-center">{categoryData.title}</h2>
+        <div className="quiz-card-ctn">
+          {quizList.map((item) => (
+            <Link to={`rules/${quizId}`} key={item.id}>
+              <QuizCard
+                imgSrc={categoryData.cardImg}
+                quizTitle={item.quizTitle}
+              />
             </Link>
-          </div>
+          ))}
         </div>
       </section>
       <Footer />
