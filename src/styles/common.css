@@ -71,7 +71,7 @@ nav.main-nav ul.right-nav {
   align-items: center;
 }
 
-nav.main-nav ul.right-nav span.material-icons {
+nav.main-nav ul.right-nav li {
   padding-left: 2rem;
   cursor: pointer;
 }
@@ -82,7 +82,7 @@ nav.main-nav ul.right-nav span.material-icons {
     flex-grow: 1;
   }
 
-  nav.main-nav ul.right-nav span.material-icons {
+  nav.main-nav ul.right-nav li {
     padding-left: 1rem;
   }
 }
