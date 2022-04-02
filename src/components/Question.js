@@ -1,5 +1,6 @@
 import "../styles/question.css";
 import {useNavigate} from "react-router-dom";
+import {v4 as uuid} from "uuid";
 import {useQuiz} from "../context/quiz-context";
 import {QUIZ_ACTIONS} from "../utils/constant";
 
@@ -16,12 +17,24 @@ const Question = ({data, goToNext, totalCount, currentCount, quizTitle}) => {
       quizDispatch({type: QUIZ_ACTIONS.INCREASE_SCORE});
     }
     if (currentCount === totalCount - 1) {
-      quizDispatch({
-        type: QUIZ_ACTIONS.ADD_SCORE_TO_QUIZBOARD,
-        payload: {title: quizTitle, score: quizState.totalScore},
-      });
-      console.log(quizState.quizBoardData);
-      localStorage.setItem("quizScores", quizState.quizBoardData);
+      // quizDispatch({
+      //   type: QUIZ_ACTIONS.ADD_SCORE_TO_QUIZBOARD,
+      //   payload: {title: quizTitle, score: quizState.totalScore},
+      // });
+      const currentQuizScore = {
+        id: uuid(),
+        title: quizTitle,
+        score: quizState.totalScore,
+      };
+      const prevAllScores = JSON.parse(localStorage.getItem("quizScores"));
+      console.log(prevAllScores);
+      prevAllScores === null
+        ? localStorage.setItem("quizScores", JSON.stringify([currentQuizScore]))
+        : localStorage.setItem(
+            "quizScores",
+            JSON.stringify([currentQuizScore, ...prevAllScores])
+          );
+
       navigate("/result");
     }
   };

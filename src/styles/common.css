@@ -76,6 +76,10 @@ nav.main-nav ul.right-nav li {
   cursor: pointer;
 }
 
+.link-primary {
+  color: var(--clr-primary);
+}
+
 @media screen and (max-width: 800px) {
   nav.main-nav .search-bar {
     order: 1;
