@@ -3,3 +3,4 @@ export {Quiz} from "./Quiz";
 export {Rules} from "./Rules";
 export {Result} from "./Result";
 export {Category} from "./Category";
+export {QuizBoard} from "./QuizBoard";
