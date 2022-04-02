@@ -51,6 +51,7 @@ const Quiz = () => {
             goToNext={goToNext}
             totalCount={totalQuestionCount}
             currentCount={currentQuestion}
+            quizTitle={quizTitle}
           />
         )}
       </section>

@@ -1,7 +1,12 @@
 import "../styles/quizboard.css";
+import {useEffect} from "react";
 import { NavMenu, Footer } from "../components";
 
 const QuizBoard = () => {
+    useEffect(() => {
+        console.log(localStorage.getItem("quizScores"));
+    }, []);
+    
     return (
         <>
         <NavMenu />

@@ -4,6 +4,17 @@
   margin: 1rem auto;
 }
 
+.question-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question-head button {
+  color: var(--clr-white);
+  background-color: var(--input-error);
+}
+
 p.question-title {
   font-size: 1.5rem;
 }

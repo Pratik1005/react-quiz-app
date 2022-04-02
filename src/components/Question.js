@@ -3,8 +3,8 @@ import {useNavigate} from "react-router-dom";
 import {useQuiz} from "../context/quiz-context";
 import {QUIZ_ACTIONS} from "../utils/constant";
 
-const Question = ({data, goToNext, totalCount, currentCount}) => {
-  const {quizDispatch} = useQuiz();
+const Question = ({data, goToNext, totalCount, currentCount, quizTitle}) => {
+  const {quizState, quizDispatch} = useQuiz();
   const navigate = useNavigate();
   const handleQuestionCount = (item) => {
     goToNext();
@@ -16,14 +16,31 @@ const Question = ({data, goToNext, totalCount, currentCount}) => {
       quizDispatch({type: QUIZ_ACTIONS.INCREASE_SCORE});
     }
     if (currentCount === totalCount - 1) {
+      quizDispatch({
+        type: QUIZ_ACTIONS.ADD_SCORE_TO_QUIZBOARD,
+        payload: {title: quizTitle, score: quizState.totalScore},
+      });
+      console.log(quizState.quizBoardData);
+      localStorage.setItem("quizScores", quizState.quizBoardData);
       navigate("/result");
     }
   };
+
+  const handleQuit = () => {
+    quizDispatch({type: QUIZ_ACTIONS.RESET_QUIZ_STATE});
+    navigate("/");
+  };
   return (
     <div className="question-ctn">
-      <p className="fw-bold pd-bottom-lg">
-        Question: {currentCount + 1}/{totalCount}
-      </p>
+      <div className="question-head pd-bottom-lg">
+        <p className="fw-bold">
+          Question: {currentCount + 1}/{totalCount}
+        </p>
+        <button className="btn btn-primary" onClick={handleQuit}>
+          Quit
+        </button>
+      </div>
+
       <p className="question-title pd-bottom-lg">{data.question}</p>
       <div className="option-ctn">
         {data.options.map((item) => (
