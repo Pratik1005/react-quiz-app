@@ -3,7 +3,6 @@ import {useNavigate} from "react-router-dom";
 import {useQuiz} from "../context/quiz-context";
 import {QUIZ_ACTIONS} from "../utils/constant";
 import {useTimer} from "../hooks";
-import {useEffect} from "react";
 
 const Question = ({data, goToNext, totalCount, currentCount}) => {
   const {quizDispatch} = useQuiz();

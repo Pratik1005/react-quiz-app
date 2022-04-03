@@ -29,7 +29,7 @@ const Result = () => {
           "quizScores",
           JSON.stringify([currentQuizScore, ...prevAllScores])
         );
-  }, []);
+  }, [quizState.totalScore]);
   return (
     <>
       <NavMenu />

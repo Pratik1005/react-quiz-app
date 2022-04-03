@@ -5,7 +5,7 @@ const useTimer = (goToNext, currentCount, totalCount) => {
     const [minutes, setMinutes] = useState(2);
     const [seconds, setSeconds] = useState(0);
     const navigate = useNavigate();
-    
+
     useEffect(() => {
       function handleCountDown() {
         if (seconds > 0) {
@@ -28,7 +28,7 @@ const useTimer = (goToNext, currentCount, totalCount) => {
       return () => {
         clearInterval(intervalId);
       };
-    }, [minutes, seconds]);
+    }, [minutes, seconds, goToNext, currentCount, totalCount, navigate]);
 
     return {minutes, setMinutes, seconds, setSeconds}
 }
