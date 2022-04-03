@@ -1,9 +1,11 @@
 import {useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 
-const useTimer = () => {
+const useTimer = (goToNext, currentCount, totalCount) => {
     const [minutes, setMinutes] = useState(2);
     const [seconds, setSeconds] = useState(0);
-  
+    const navigate = useNavigate();
+    
     useEffect(() => {
       function handleCountDown() {
         if (seconds > 0) {
@@ -11,7 +13,11 @@ const useTimer = () => {
         }
         if (seconds === 0) {
           if (minutes === 0) {
-            clearInterval(intervalId);
+            setMinutes(2);
+            goToNext();
+            if (currentCount === totalCount - 1) {
+                navigate("/result");
+            }
           } else {
             setMinutes((prev) => prev - 1);
             setSeconds(59);
@@ -24,7 +30,7 @@ const useTimer = () => {
       };
     }, [minutes, seconds]);
 
-    return {minutes, seconds}
+    return {minutes, setMinutes, seconds, setSeconds}
 }
 
 export {useTimer};

@@ -2,12 +2,22 @@ import "../styles/question.css";
 import {useNavigate} from "react-router-dom";
 import {useQuiz} from "../context/quiz-context";
 import {QUIZ_ACTIONS} from "../utils/constant";
+import {useTimer} from "../hooks";
+import {useEffect} from "react";
 
-const Question = ({data, goToNext, totalCount, currentCount, quizTitle}) => {
+const Question = ({data, goToNext, totalCount, currentCount}) => {
   const {quizDispatch} = useQuiz();
   const navigate = useNavigate();
+  const {minutes, setMinutes, seconds, setSeconds} = useTimer(
+    goToNext,
+    currentCount,
+    totalCount
+  );
+
   const handleQuestionCount = (item) => {
     goToNext();
+    setMinutes(2);
+    setSeconds(0);
     quizDispatch({
       type: QUIZ_ACTIONS.SET_USER_SELECTED_OPTION,
       payload: item.option,
@@ -20,7 +30,7 @@ const Question = ({data, goToNext, totalCount, currentCount, quizTitle}) => {
     }
   };
 
-  const handleQuit = () => {
+  const handleQuitQuiz = () => {
     quizDispatch({type: QUIZ_ACTIONS.RESET_QUIZ_STATE});
     navigate("/");
   };
@@ -30,7 +40,11 @@ const Question = ({data, goToNext, totalCount, currentCount, quizTitle}) => {
         <p className="fw-bold">
           Question: {currentCount + 1}/{totalCount}
         </p>
-        <button className="btn btn-primary" onClick={handleQuit}>
+        <h3>
+          {minutes < 10 ? `0${minutes}` : minutes} :
+          {seconds < 10 ? `0${seconds}` : seconds}
+        </h3>
+        <button className="btn btn-primary" onClick={handleQuitQuiz}>
           Quit
         </button>
       </div>
