@@ -24,12 +24,6 @@ const quizReducer = (state, action) => {
         quizData: [],
         quizBoardData: [],
       };
-    case QUIZ_ACTIONS.ADD_SCORE_TO_QUIZBOARD:
-      console.log("add score", action.payload);
-      return {
-        ...state,
-        quizBoardData: [...state.quizBoardData, action.payload],
-      };
     default:
       return state;
   }
