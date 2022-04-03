@@ -35,6 +35,11 @@ const Result = () => {
       <NavMenu />
       <section>
         <h2 className="text-center pd-lg">Result</h2>
+        <p className="question-title text-center pd-bottom-lg">
+          {quizState.totalScore >= 60
+            ? "🌟 Congratulations, You Won!"
+            : "😣 Opps, Better Luck Next Time"}
+        </p>
         <p className="question-title text-center fw-bold">
           You Scored: {quizState.totalScore}/100
         </p>
