@@ -18,3 +18,9 @@
 .rules-info li span.material-icons {
   color: var(--clr-primary);
 }
+
+@media screen and (max-width: 800px) {
+  .rules-ctn {
+    width: 90%;
+  }
+}

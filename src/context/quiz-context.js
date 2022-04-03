@@ -7,6 +7,7 @@ const quizInitialState = {
   totalScore: 0,
   userSelectedOptions: [],
   quizData: [],
+  quizBoardData: [],
 };
 
 const QuizProvider = ({children}) => {

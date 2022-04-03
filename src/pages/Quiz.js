@@ -31,6 +31,7 @@ const Quiz = () => {
           type: QUIZ_ACTIONS.INITIALIZE_QUIZ_DATA,
           payload: currentQuiz.quizData,
         });
+        localStorage.setItem("quizTitle", params.quizTitle);
       } catch (err) {
         console.error("Single quiz", err);
       }

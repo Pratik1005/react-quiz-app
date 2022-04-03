@@ -1,4 +1,6 @@
 import "../styles/question.css";
+import {useEffect} from "react";
+import {v4 as uuid} from "uuid";
 import {NavMenu, Footer} from "../components";
 import {useQuiz} from "../context/quiz-context";
 
@@ -12,11 +14,32 @@ const Result = () => {
       }
     }
   };
+
+  useEffect(() => {
+    const quizTitle = localStorage.getItem("quizTitle");
+    const currentQuizScore = {
+      id: uuid(),
+      title: quizTitle,
+      score: quizState.totalScore,
+    };
+    const prevAllScores = JSON.parse(localStorage.getItem("quizScores"));
+    prevAllScores === null
+      ? localStorage.setItem("quizScores", JSON.stringify([currentQuizScore]))
+      : localStorage.setItem(
+          "quizScores",
+          JSON.stringify([currentQuizScore, ...prevAllScores])
+        );
+  }, [quizState.totalScore]);
   return (
     <>
       <NavMenu />
       <section>
         <h2 className="text-center pd-lg">Result</h2>
+        <p className="question-title text-center pd-bottom-lg">
+          {quizState.totalScore >= 60
+            ? "🌟 Congratulations, You Won!"
+            : "😣 Opps, Better Luck Next Time"}
+        </p>
         <p className="question-title text-center fw-bold">
           You Scored: {quizState.totalScore}/100
         </p>

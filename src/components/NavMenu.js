@@ -14,6 +14,11 @@ const NavMenu = () => {
           </div>
           <ul className="right-nav">
             <li>
+              <Link to="/quizboard" className="fw-bold link-primary">
+                Quizboard
+              </Link>
+            </li>
+            <li>
               <Link to="/" className="btn btn-primary">
                 Login
               </Link>

@@ -22,6 +22,7 @@ const quizReducer = (state, action) => {
         totalScore: 0,
         userSelectedOptions: [],
         quizData: [],
+        quizBoardData: [],
       };
     default:
       return state;
