@@ -1,5 +1,15 @@
 import {Routes, Route} from "react-router-dom";
-import {Home, Category, Quiz, Rules, Result, QuizBoard, Login} from "../pages";
+import {
+  Home,
+  Category,
+  Quiz,
+  Rules,
+  Result,
+  QuizBoard,
+  Login,
+  Signup,
+  ForgotPassword,
+} from "../pages";
 
 const MenuRoutes = () => {
   return (
@@ -11,6 +21,8 @@ const MenuRoutes = () => {
       <Route path="/result" element={<Result />} />
       <Route path="/quizboard" element={<QuizBoard />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/forgotpassword" element={<ForgotPassword />} />
     </Routes>
   );
 };

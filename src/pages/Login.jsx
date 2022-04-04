@@ -6,7 +6,8 @@ const Login = () => {
     return (
         <>
         <NavMenu />
-        <section className="form-ctn br-md">
+        <section className="app-ctn">
+        <div className="form-ctn br-md">
         <form>
             <h2 className="text-center mg-bottom-md">Login</h2>
             <div className="form-control">
@@ -30,6 +31,7 @@ const Login = () => {
                 </Link>
             </div>
         </form>
+    </div>
     </section>
     <Footer />
         </>
