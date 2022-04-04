@@ -1,6 +1,6 @@
 import "../styles/404.css";
 import {NavMenu, Footer} from "../components";
-import notFound from "../assets/404.svg";
+import {IMAGES} from "../images/images";
 
 const PageNotFound = () => {
   return (
@@ -8,7 +8,7 @@ const PageNotFound = () => {
       <NavMenu />
       <section className="not-found-ctn app-ctn">
         <img
-          src={notFound}
+          src={IMAGES.notFound}
           alt="404-page-not-found"
           className="img-responsive"
         />
