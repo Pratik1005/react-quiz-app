@@ -1,6 +1,7 @@
 import "../styles/question.css";
 import {useEffect} from "react";
 import {v4 as uuid} from "uuid";
+import {toast} from "react-toastify";
 import {NavMenu, Footer} from "../components";
 import {useQuiz} from "../context/quiz-context";
 
@@ -16,6 +17,7 @@ const Result = () => {
   };
 
   useEffect(() => {
+    toast.info("Quiz ended");
     const quizTitle = localStorage.getItem("quizTitle");
     const currentQuizScore = {
       id: uuid(),
