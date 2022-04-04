@@ -19,7 +19,7 @@ const NavMenu = () => {
               </Link>
             </li>
             <li>
-              <Link to="/Login" className="btn btn-primary">
+              <Link to="/login" className="btn btn-primary">
                 Login
               </Link>
             </li>
