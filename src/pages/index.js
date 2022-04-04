@@ -7,3 +7,4 @@ export {QuizBoard} from "./QuizBoard";
 export {Login} from "./Login";
 export {Signup} from "./Signup";
 export {ForgotPassword} from "./ForgotPassword";
+export {PageNotFound} from "./404";

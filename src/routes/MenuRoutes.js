@@ -9,6 +9,7 @@ import {
   Login,
   Signup,
   ForgotPassword,
+  PageNotFound,
 } from "../pages";
 
 const MenuRoutes = () => {
@@ -23,6 +24,7 @@ const MenuRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/forgotpassword" element={<ForgotPassword />} />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 };
