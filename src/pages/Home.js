@@ -1,10 +1,9 @@
-import {IMAGES} from "../images/images";
 import "../styles/home.css";
-import {NavMenu, Footer} from "../components";
 import {useState, useEffect} from "react";
-import axios from "axios";
-import {FeaturedCategory} from "../components/FeaturedCategory";
 import {Link} from "react-router-dom";
+import axios from "axios";
+import {IMAGES} from "../images/images";
+import {NavMenu, Footer, FeaturedCategory, Loader} from "../components";
 
 const Home = () => {
   const [featuredCategory, setFeaturedCategory] = useState([]);
@@ -37,7 +36,7 @@ const Home = () => {
       <section>
         <h2 className="text-center mg-lg">Featured Categories</h2>
         <div className="container">
-          {loader && <h3 className="text-center">Loading...</h3>}
+          {loader && <Loader />}
           <div className="categories-ctn">
             {featuredCategory.map((item) => (
               <Link to={`/category/${item.id}`} key={item.id}>
