@@ -1,15 +1,11 @@
-.form-ctn {
-    margin: 4rem auto 0;
-    width: 100%;
-    max-width: 31.25rem;
-    box-shadow: var(--light-shadow);
-}
-  
 form {
     background-color: var(--clr-white);
     padding: 2rem 4rem;
     width: 100%;
     border-radius: 8px;
+    margin: 4rem auto;
+    max-width: 31.25rem;
+    box-shadow: var(--light-shadow);
 }
   
 .form-control {
@@ -54,7 +50,7 @@ input:focus {
 }
   
 /* login */
-label[for="remember-me"] a.forgot-pw {
+.forgot-pw {
     padding-left: 3rem;
     color: #a78bfa;
 }
@@ -73,4 +69,16 @@ button.btn-icon-text-outline {
 /* error */
 .error-msg {
     color: var(--input-error);
+}
+
+@media screen and (max-width: 800px) {
+    form {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .forgot-pw {
+        display: block;
+        padding: 0;
+    }
 }

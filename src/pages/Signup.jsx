@@ -7,8 +7,7 @@ const Signup = () => {
         <>
         <NavMenu />
         <section className="app-ctn">
-        <div className="form-ctn br-md">
-        <form>
+        <form className="br-md">
             <h2 className="text-center mg-bottom-md">Signup</h2>
             <div className="form-control">
                 <label htmlFor="first-name" className="fw-bold">First name</label>
@@ -43,7 +42,6 @@ const Signup = () => {
                 </Link>
             </div>
         </form>
-    </div>
     </section>
     <Footer />
     </>

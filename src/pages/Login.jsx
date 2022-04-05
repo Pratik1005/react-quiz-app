@@ -32,8 +32,7 @@ const Login = () => {
         <>
         <NavMenu />
         <section className="app-ctn">
-        <div className="form-ctn br-md">
-        <form>
+        <form className="br-md">
             <h2 className="text-center mg-bottom-md">Login</h2>
             {loginData.error && <p className="error-msg form-control">Invalid credentials</p>}
             <div className="form-control">
@@ -46,7 +45,8 @@ const Login = () => {
             </div>
             <div className="form-control">
                 <input type="checkbox" id="remember-me" name="checkbox" />
-                <label htmlFor="remember-me" className="fw-bold">Remember me <Link to="/forgotpassword" className="forgot-pw">Forgot your Password?</Link></label>
+                <label htmlFor="remember-me" className="fw-bold">Remember me </label>
+                <Link to="/forgotpassword" className="forgot-pw fw-bold">Forgot your Password?</Link>
             </div>
             <div className="form-control">
                 <button className="btn btn-primary" onClick={e => handleLogin(e)}>Login</button>
@@ -60,7 +60,7 @@ const Login = () => {
                 </Link>
             </div>
         </form>
-    </div>
+    
     </section>
     <Footer />
         </>
