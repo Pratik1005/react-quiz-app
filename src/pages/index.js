@@ -8,3 +8,4 @@ export {Login} from "./Login";
 export {Signup} from "./Signup";
 export {ForgotPassword} from "./ForgotPassword";
 export {PageNotFound} from "./404";
+export {UserProfile} from "./UserProfile";

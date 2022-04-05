@@ -10,6 +10,7 @@ import {
   Signup,
   ForgotPassword,
   PageNotFound,
+  UserProfile,
 } from "../pages";
 
 const MenuRoutes = () => {
@@ -24,6 +25,7 @@ const MenuRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/forgotpassword" element={<ForgotPassword />} />
+      <Route path="/user" element={<UserProfile />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
