@@ -3,6 +3,7 @@
     max-width: 500px;
     margin: 1rem auto;
     box-shadow: 0 2px 20px var(--black-soft);
+    background-color: var(--clr-white);
 }
 
 .profile-img {

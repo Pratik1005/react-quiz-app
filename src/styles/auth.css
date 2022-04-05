@@ -69,3 +69,8 @@ button.btn-icon-text-outline {
     margin: 0;
     background-color: var(--clr-white);
 }
+
+/* error */
+.error-msg {
+    color: var(--input-error);
+}

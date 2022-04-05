@@ -1,5 +1,6 @@
 import "../styles/user-profile.css";
 import "../images/images";
+import { Link } from "react-router-dom";
 import { NavMenu, Footer } from "../components";
 import { IMAGES } from "../images/images";
 
@@ -13,7 +14,7 @@ const UserProfile = () => {
                 <div className="profile-img br-full">
                 <img src={IMAGES.userImg} alt="jhon-doe" className="img-responsive"/>
                 </div>
-                <div className="user-detail">
+                <div className="user-detail pd-bottom-lg">
                     <div className="pd-bottom-lg">
                     <p>Name</p>
                     <p className="para-lg">Jhon Doe</p>
@@ -27,6 +28,7 @@ const UserProfile = () => {
                     <p className="para-lg">jhon@gmail.com</p>
                     </div>
                 </div>
+                <Link to="/login" className="btn btn-primary">Logout</Link>
             </div>
         </section>
         <Footer />

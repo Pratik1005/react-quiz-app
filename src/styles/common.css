@@ -80,6 +80,10 @@ nav.main-nav ul.right-nav li {
   color: var(--clr-primary);
 }
 
+.link-primary span.profile {
+  font-size: 1.75rem;
+}
+
 @media screen and (max-width: 800px) {
   nav.main-nav .search-bar {
     order: 1;
