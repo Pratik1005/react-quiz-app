@@ -39,6 +39,11 @@
   box-shadow: 0 2px 20px var(--black-soft);
   overflow: hidden;
   background-color: var(--clr-white);
+  transition: 0.3s;
+}
+
+.categories-ctn .category:hover {
+  transform: translateY(-10px);
 }
 
 .category h3.category-title {

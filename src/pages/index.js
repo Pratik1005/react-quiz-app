@@ -4,3 +4,8 @@ export {Rules} from "./Rules";
 export {Result} from "./Result";
 export {Category} from "./Category";
 export {QuizBoard} from "./QuizBoard";
+export {Login} from "./Login";
+export {Signup} from "./Signup";
+export {ForgotPassword} from "./ForgotPassword";
+export {PageNotFound} from "./404";
+export {UserProfile} from "./UserProfile";

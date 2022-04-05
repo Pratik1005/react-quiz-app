@@ -1,6 +1,7 @@
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import axios from "axios";
+import {toast} from "react-toastify";
 import {NavMenu, Footer, Question} from "../components";
 import {useQuiz} from "../context/quiz-context";
 import {QUIZ_ACTIONS} from "../utils/constant";
@@ -31,6 +32,7 @@ const Quiz = () => {
           type: QUIZ_ACTIONS.INITIALIZE_QUIZ_DATA,
           payload: currentQuiz.quizData,
         });
+        toast.info("Quiz started");
         localStorage.setItem("quizTitle", params.quizTitle);
       } catch (err) {
         console.error("Single quiz", err);

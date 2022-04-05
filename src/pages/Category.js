@@ -2,7 +2,7 @@ import "../styles/category.css";
 import {useParams, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {NavMenu, Footer, QuizCard} from "../components";
+import {NavMenu, Footer, QuizCard, Loader} from "../components";
 
 const Category = () => {
   const [loader, setLoader] = useState(true);
@@ -34,7 +34,7 @@ const Category = () => {
     <>
       <NavMenu />
       <section className="app-ctn">
-        {loader && <h2 className="text-center">Loading...</h2>}
+        {loader && <Loader />}
         <h2 className="text-center pd-lg">Quizzes on {categoryData.title}</h2>
         {quizList.length > 0 ? (
           <div className="quiz-card-ctn">

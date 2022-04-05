@@ -19,8 +19,8 @@ const NavMenu = () => {
               </Link>
             </li>
             <li>
-              <Link to="/" className="btn btn-primary">
-                Login
+              <Link to="/login" className="link-primary">
+                <span class="material-icons profile">account_circle</span>
               </Link>
             </li>
           </ul>

@@ -1,5 +1,17 @@
 import {Routes, Route} from "react-router-dom";
-import {Home, Category, Quiz, Rules, Result, QuizBoard} from "../pages";
+import {
+  Home,
+  Category,
+  Quiz,
+  Rules,
+  Result,
+  QuizBoard,
+  Login,
+  Signup,
+  ForgotPassword,
+  PageNotFound,
+  UserProfile,
+} from "../pages";
 
 const MenuRoutes = () => {
   return (
@@ -10,6 +22,11 @@ const MenuRoutes = () => {
       <Route path="/quiz/:quizId/:quizTitle" element={<Quiz />} />
       <Route path="/result" element={<Result />} />
       <Route path="/quizboard" element={<QuizBoard />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/forgotpassword" element={<ForgotPassword />} />
+      <Route path="/user" element={<UserProfile />} />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 };
